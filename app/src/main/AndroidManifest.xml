@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.antoni.freenozzle.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -18,9 +18,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.antoni.freenozzle.FirstStep"
+            android:name=".FirstStep"
             android:label="@string/title_activity_first_step"
-            android:parentActivityName="com.antoni.freenozzle.MainActivity" >
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.antoni.freenozzle.MainActivity" />
+        </activity>
+        <activity
+            android:name=".GasCombustionActivity"
+            android:label="@string/title_activity_gas_combustion"
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.antoni.freenozzle.MainActivity" />
