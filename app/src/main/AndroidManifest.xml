@@ -51,6 +51,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.antoni.freenozzle.StudyActivity" />
         </activity>
+        <activity
+            android:name=".DesignActivity"
+            android:label="@string/title_activity_design"
+            android:parentActivityName=".GasCombustionActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.antoni.freenozzle.GasCombustionActivity" />
+        </activity>
     </application>
 
 </manifest>

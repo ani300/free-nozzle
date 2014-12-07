@@ -1,26 +1,29 @@
 package com.antoni.freenozzle;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 
-public class GasCombustionActivity extends ActionBarActivity {
+public class GasCombustionActivity extends ActionBarActivity implements AdapterView.OnItemSelectedListener {
 
+    private int mRorMMchoose = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gas_combustion);
 
-        Spinner mSpinner = (Spinner) findViewById(R.id.spinner);
+        final int mOperation = getIntent().getIntExtra(MainActivity.mOperation, 0);
+
+        // UI Operations
+        final Spinner mSpinner = (Spinner) findViewById(R.id.spinner);
+        mSpinner.setOnItemSelectedListener(this);
 
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -31,38 +34,52 @@ public class GasCombustionActivity extends ActionBarActivity {
         mSpinner.setAdapter(adapter);
 
         Button mButton = (Button) findViewById(R.id.button);
+        final EditText mPressure = (EditText) findViewById(R.id.editText);
+        final EditText mTemperature = (EditText) findViewById(R.id.editText2);
+        final EditText mRorMM = (EditText) findViewById(R.id.editText3);
+        final EditText mGamma = (EditText) findViewById(R.id.editText4);
 
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(GasCombustionActivity.this, StudyActivity.class);
+                Intent intent;
+                if (mOperation == 1) {
+                    // Go to design
+                    intent = new Intent(GasCombustionActivity.this, DesignActivity.class);
+                }
+                else {
+                    // Go to study
+                    intent = new Intent(GasCombustionActivity.this, StudyActivity.class);
+                }
+                // Put all needed variables in Intent
+                intent.putExtra("P0", Double.parseDouble(mPressure.getText().toString()));
+                intent.putExtra("T0", Double.parseDouble(mTemperature.getText().toString()));
+                if (mRorMMchoose == 0) {
+                    intent.putExtra("RorMM", 0);
+                    intent.putExtra("r", Double.parseDouble(mRorMM.getText().toString()));
+                }
+                else if (mRorMMchoose == 1) {
+                    intent.putExtra("RorMM", 1);
+                    intent.putExtra("MM", Double.parseDouble(mRorMM.getText().toString()));
+                }
+                intent.putExtra("gamma", Double.parseDouble(mGamma.getText().toString()));
                 startActivity(intent);
             }
         });
-
-        Log.v("WOLOLO", String.valueOf(this.getIntent().getIntExtra(MainActivity.mOperation, 0)));
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_gas_combustion, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+        // An item was selected. You can retrieve the selected item using
+        String s = (String) parent.getItemAtPosition(pos);
+        if (s.equals("r (J/(kg*K))")) {
+            mRorMMchoose = 0;
         }
+        else if (s.equals("MM (g/mol)")) {
+            mRorMMchoose = 1;
+        }
+    }
 
-        return super.onOptionsItemSelected(item);
+    public void onNothingSelected(AdapterView<?> parent) {
+        // Another interface callback
     }
 }
