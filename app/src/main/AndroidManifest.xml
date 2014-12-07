@@ -20,7 +20,8 @@
         <activity
             android:name=".FirstStep"
             android:label="@string/title_activity_first_step"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.antoni.freenozzle.MainActivity" />
@@ -28,10 +29,27 @@
         <activity
             android:name=".GasCombustionActivity"
             android:label="@string/title_activity_gas_combustion"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.antoni.freenozzle.MainActivity" />
+        </activity>
+        <activity
+            android:name=".StudyActivity"
+            android:label="@string/title_activity_study"
+            android:parentActivityName=".GasCombustionActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.antoni.freenozzle.GasCombustionActivity" />
+        </activity>
+        <activity
+            android:name=".StudyResultActivity"
+            android:label="@string/title_activity_study_result"
+            android:parentActivityName=".StudyActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.antoni.freenozzle.StudyActivity" />
         </activity>
     </application>
 
