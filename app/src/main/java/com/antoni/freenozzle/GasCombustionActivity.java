@@ -54,14 +54,14 @@ public class GasCombustionActivity extends ActionBarActivity implements AdapterV
                 // Put all needed variables in Intent
                 intent.putExtra("P0", Double.parseDouble(mPressure.getText().toString()));
                 intent.putExtra("T0", Double.parseDouble(mTemperature.getText().toString()));
+                double r = 0.0;
                 if (mRorMMchoose == 0) {
-                    intent.putExtra("RorMM", 0);
-                    intent.putExtra("r", Double.parseDouble(mRorMM.getText().toString()));
+                    r = Double.parseDouble(mRorMM.getText().toString());
                 }
                 else if (mRorMMchoose == 1) {
-                    intent.putExtra("RorMM", 1);
-                    intent.putExtra("MM", Double.parseDouble(mRorMM.getText().toString()));
+                    r = 8.314/Double.parseDouble(mRorMM.getText().toString())*1000.0;
                 }
+                intent.putExtra("r", r);
                 intent.putExtra("gamma", Double.parseDouble(mGamma.getText().toString()));
                 startActivity(intent);
             }

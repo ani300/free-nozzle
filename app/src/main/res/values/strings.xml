@@ -15,13 +15,17 @@
     <string name="gamma_gas">γ</string>
     <string name="comb_end">When everything has been filled, press next!</string>
     <string name="next">NEXT!</string>
-    <string name="study_intro">We\'re looking at supersonic nozzles, so there needs to be a throat with M=1. In order to do the remaining calculus you need to enter either the mass flux or the throat\'s diameter, along with the ambient pressure.</string>
-    <string name="study_note">Cases when M=1 is not reached in the nozzle will be done in the future.</string>
+    <string name="study_intro">We\'re looking at supersonic nozzles, so there needs to be a throat with M=1. In order to do the remaining calculus you need to enter either the mass flux or the throat\'s diameter, along with the pressure in the exit and in the ambient.</string>
+    <string name="study_note">Cases when M=1 is not reached in the nozzle throat will be done in the future, so please enter a value of Pe that is smaller than </string>
+    <string name="Pe">Pe (bar)</string>
     <string name="Pa">Pa (bar)</string>
+    <string name="F">Resultant thrust (N):</string>
+    <string name="Dt">Throat diameter (m):</string>
+    <string name="De">Exit diameter (m):</string>
     <string name="title_activity_first_step">FirstStep</string>
     <string name="title_activity_gas_combustion">Gas Properties</string>
     <string name="title_activity_study">Study</string>
-    <string name="title_activity_study_result">StudyResultActivity</string>
+    <string name="title_activity_study_result">Results</string>
     <string name="title_activity_design">Design</string>
 
 </resources>

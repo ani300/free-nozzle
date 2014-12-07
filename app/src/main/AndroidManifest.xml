@@ -18,15 +18,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FirstStep"
-            android:label="@string/title_activity_first_step"
-            android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.antoni.freenozzle.MainActivity" />
-        </activity>
-        <activity
             android:name=".GasCombustionActivity"
             android:label="@string/title_activity_gas_combustion"
             android:parentActivityName=".MainActivity"
