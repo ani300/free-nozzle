@@ -3,6 +3,7 @@ package com.antoni.freenozzle;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -36,6 +37,7 @@ public class StudyActivity extends ActionBarActivity implements AdapterView.OnIt
         mInfo.setText(mInfo.getText() + " " + df.format(Pstar) + ".");
 
         Spinner mSpinner = (Spinner) findViewById(R.id.spinner2);
+        mSpinner.setOnItemSelectedListener(this);
 
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
