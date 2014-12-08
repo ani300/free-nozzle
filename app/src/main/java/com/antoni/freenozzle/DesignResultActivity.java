@@ -65,7 +65,7 @@ public class DesignResultActivity extends ActionBarActivity {
         double k = (Pt*Math.sqrt(gamma))/Math.sqrt(r * Tt);
         Me = Math.sqrt(2.0/(gamma-1)*(Math.pow(P0/Pe, (gamma-1)/gamma)-1));
 
-        Ae = F / ((k*ve/Math.sqrt(1 / (Me * Me) * Math.pow(2 / (gamma + 1) * (1 + (gamma - 1) / 2 * Me * Me), (gamma + 1) / (gamma - 1)))) + (Pe-Pa)*10000);
+        Ae = F / ((k*ve/Math.sqrt(1 / (Me * Me) * Math.pow(2 / (gamma + 1) * (1 + (gamma - 1) / 2 * Me * Me), (gamma + 1) / (gamma - 1)))) + (Pe-Pa)*100000);
         At = Ae / Math.sqrt(1 / (Me * Me) * Math.pow(2 / (gamma + 1) * (1 + (gamma - 1) / 2 * Me * Me), (gamma + 1) / (gamma - 1))); // m2
 
         De = Math.sqrt(4*Ae/Math.PI); // m

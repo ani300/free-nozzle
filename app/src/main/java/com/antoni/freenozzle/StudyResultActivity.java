@@ -74,20 +74,22 @@ public class StudyResultActivity extends ActionBarActivity {
         // 1. Calculate m_dot or Dt as needed, using Pt, Tt as auxiliaries
         double Pt = P0*Math.pow(2.0 / (gamma + 1), gamma / (gamma - 1)); // bar
         double Tt = T0*(2/(gamma + 1)); // K
+        double rho_t = Pt*100000/(r*Tt);
+        double a_t = Math.sqrt(gamma*r*Tt);
         // m_dot = rho_t * A_t * v_t = (P_t * A_t * sqrt(gamma))/sqrt(r * T_t)
         if (morDt == 0) {
-            Dt = Math.sqrt((4 * m * Math.sqrt(r * Tt)) / (Math.PI * Pt * 10000 * Math.sqrt(gamma))); // m
-            At = Math.PI * Math.pow(Dt, 2) / 4; // m2
+            At = m / (rho_t * a_t); // m
+            Dt = Math.sqrt((4 * At) / Math.PI); // m
         }
         else if(morDt == 1) {
             At = Math.PI * Math.pow(Dt, 2) / 4; // m2
-            m = (Pt*10000*At*Math.sqrt(gamma))/Math.sqrt(r*Tt); // kg/s
+            m = (Pt*100000*At*Math.sqrt(gamma))/Math.sqrt(r*Tt); // kg/s
         }
         ve = Math.sqrt((2 * gamma * r * T0) / (gamma - 1) * (1 - Math.pow(Pe / P0, (gamma - 1) / gamma))); // m/s
         Me = Math.sqrt(2.0/(gamma-1)*(Math.pow(P0/Pe, (gamma-1)/gamma)-1));
         Ae = At* Math.sqrt(1 / (Me * Me) * Math.pow(2 / (gamma + 1) * (1 + (gamma - 1) / 2 * Me * Me), (gamma + 1) / (gamma - 1))); // m2
         De = Math.sqrt(4*Ae/Math.PI); // m
-        F = m*ve + Ae*(Pe-Pa)*10000; // N
+        F = m*ve + Ae*(Pe-Pa)*100000; // N
 
         Log.v("WOLOLO", Double.toString(P0));
         Log.v("WOLOLO", Double.toString(T0));
