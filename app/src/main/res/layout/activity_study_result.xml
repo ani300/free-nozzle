@@ -28,4 +28,11 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/De"
         android:id="@+id/textView15" />
+
+    <view
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        class="com.antoni.freenozzle.NozzleView"
+        android:id="@+id/paintView"
+        android:layout_marginTop="10dp" />
 </LinearLayout>

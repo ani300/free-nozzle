@@ -3,8 +3,6 @@ package com.antoni.freenozzle;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
@@ -61,6 +59,15 @@ public class StudyResultActivity extends ActionBarActivity {
         mThrust.setText(mThrust.getText() + " " + df.format(F));
         mDt.setText(mDt.getText() + " " + df.format(Dt));
         mDe.setText(mDe.getText() + " " + df.format(De));
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        NozzleView mPaint = (NozzleView) findViewById(R.id.paintView);
+        NozzleView.NozzleThread mThread = mPaint.getThread();
+        mThread.provideData(Dt, De);
     }
 
     private void performCalculus() {
