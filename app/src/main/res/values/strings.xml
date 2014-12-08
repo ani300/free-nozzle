@@ -22,10 +22,12 @@
     <string name="F">Resultant thrust (N):</string>
     <string name="Dt">Throat diameter (m):</string>
     <string name="De">Exit diameter (m):</string>
+    <string name="design_intro">In the design problem, you only to specify a force and the exit amb ambient pressure.</string>
     <string name="title_activity_first_step">FirstStep</string>
     <string name="title_activity_gas_combustion">Gas Properties</string>
     <string name="title_activity_study">Study</string>
     <string name="title_activity_study_result">Results</string>
     <string name="title_activity_design">Design</string>
+    <string name="title_activity_design_result">Results</string>
 
 </resources>
