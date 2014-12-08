@@ -12,4 +12,4 @@ characteristics.
 It has to be noted that the app is still in an alpha state! It is feature complete, but it can (has)
 some errors, and it does not do input checking, for instance.
 
-I plan to fix al of this if I have time, but I don't have that much time.
+I plan to fix all of this if I have time, but I don't have that much time right now.

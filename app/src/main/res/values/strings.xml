@@ -24,6 +24,7 @@
     <string name="De">Exit diameter (m):</string>
     <string name="m">Mass flux (kg/s):</string>
     <string name="design_intro">In the design problem, you only to specify a force and the exit amb ambient pressure.</string>
+    <string name="summerfield_info">Keep in mind that if the ratio Pe/Pa violates any of the Summerfield conditions, like Pe/Pa >= 0.4 or Pe/Pa >= (1.88*Me - 1)^-0.64, the flow inside the nozzle will experiment separation, making any calculus made here invalid.</string>
     <string name="title_activity_first_step">FirstStep</string>
     <string name="title_activity_gas_combustion">Gas Properties</string>
     <string name="title_activity_study">Study</string>

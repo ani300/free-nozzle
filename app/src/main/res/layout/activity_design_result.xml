@@ -29,6 +29,13 @@
         android:text="@string/De"
         android:id="@+id/textView21" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/textView24"
+        android:textColor="#ffff0000" />
+
     <view
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"

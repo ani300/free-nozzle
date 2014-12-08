@@ -55,10 +55,19 @@ public class StudyResultActivity extends ActionBarActivity {
         TextView mThrust = (TextView) findViewById(R.id.textView13);
         TextView mDt = (TextView) findViewById(R.id.textView14);
         TextView mDe = (TextView) findViewById(R.id.textView15);
+        TextView mSummerfield = (TextView) findViewById(R.id.textView23);
 
         mThrust.setText(mThrust.getText() + " " + df.format(F));
         mDt.setText(mDt.getText() + " " + df.format(Dt));
         mDe.setText(mDe.getText() + " " + df.format(De));
+
+        if (Pe/Pa < 0.4 && Pe/Pa < Math.pow(1.88*Me-1, -0.64)) {
+            mSummerfield.setText("You have broken both Summmerfield conditions for flow separation, so the output you see here is not correct!");
+        }
+        else if (Pe/Pa < 0.4 || Pe/Pa < Math.pow(1.88*Me-1, -0.64)) {
+            mSummerfield.setText("You have broken one Summmerfield condition for flow separation, so the output you see here is not correct!");
+        }
+
 
     }
 
