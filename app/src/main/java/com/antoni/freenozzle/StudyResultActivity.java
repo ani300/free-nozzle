@@ -91,19 +91,21 @@ public class StudyResultActivity extends ActionBarActivity {
 
         Log.v("WOLOLO", Double.toString(P0));
         Log.v("WOLOLO", Double.toString(T0));
+        Log.v("WOLOLO", Double.toString(Pt));
+        Log.v("WOLOLO", Double.toString(Tt));
         Log.v("WOLOLO", Double.toString(r));
         Log.v("WOLOLO", Double.toString(gamma));
         Log.v("WOLOLO", Double.toString(Pe));
         Log.v("WOLOLO", Double.toString(Pa));
         Log.v("WOLOLO", Integer.toString(morDt));
+
         Log.v("WOLOLO", Double.toString(m));
         Log.v("WOLOLO", Double.toString(Dt));
-
         Log.v("WOLOLO", Double.toString(De));
-        Log.v("WOLOLO", Double.toString(F));
-        Log.v("WOLOLO", Double.toString(ve));
         Log.v("WOLOLO", Double.toString(At));
         Log.v("WOLOLO", Double.toString(Ae));
+        Log.v("WOLOLO", Double.toString(F));
+        Log.v("WOLOLO", Double.toString(ve));
         Log.v("WOLOLO", Double.toString(Me));
 
     }
